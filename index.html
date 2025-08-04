@@ -1,53 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8" />
-  <title>Image Carousel - Contained</title>
+  <title>Simple Image Carousel</title>
   <style>
+    * { box-sizing: border-box; }
     body {
-      background: #111;
       margin: 0;
-      height: 100vh;
+      background: #111;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .carousel {
       width: 300px;
-      height: 400px;
       position: relative;
       overflow: hidden;
-      border-radius: 10px;
-      background: #000;
     }
 
     .carousel-images {
       display: flex;
-      transition: transform 0.4s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
 
     .carousel-images img {
       width: 300px;
-      height: 400px;
-      object-fit: contain;
-      background-color: #000;
-      flex-shrink: 0;
+      height: auto;
+      border-radius: 8px;
     }
 
     .nav-button {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.5);
       color: white;
       border: none;
       font-size: 24px;
       width: 40px;
       height: 40px;
-      border-radius: 50%;
       cursor: pointer;
-      z-index: 1;
+      border-radius: 50%;
     }
 
     .prev { left: 10px; }
