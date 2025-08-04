@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fean Carousel</title>
+  <style>
+    body { background: #111; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .carousel { width: 300px; overflow: hidden; position: relative; }
+    .carousel-images { display: flex; transition: transform 0.5s ease-in-out; }
+    .carousel-images img { width: 300px; height: auto; border-radius: 8px; }
+    .nav-button {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white; border: none; font-size: 24px;
+      width: 40px; height: 40px; cursor: pointer; border-radius: 50%;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="carousel-images" id="carouselImages">
+      <img src="fean1.jpg" alt="Fean 1">
+      <img src="fean2.jpg" alt="Fean 2">
+      <img src="fean3.jpg" alt="Fean 3">
+      <img src="fean4.jpg" alt="Fean 4">
+      <img src="fean5.jpg" alt="Fean 5">
+    </div>
+    <button class="nav-button prev" onclick="moveSlide(-1)">‹</button>
+    <button class="nav-button next" onclick="moveSlide(1)">›</button>
+  </div>
+
+  <script>
+    let index = 0;
+    function moveSlide(direction) {
+      const images = document.getElementById("carouselImages");
+      const total = images.children.length;
+      index = (index + direction + total) % total;
+      images.style.transform = `translateX(-${index * 300}px)`;
+    }
+  </script>
+</body>
+</html>
